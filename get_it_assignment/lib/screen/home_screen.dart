@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:get_it_assignment/screen/second_screen.dart';
 import '../core/all_file.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,9 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final TextEditingController myController = TextEditingController();
-  // var tweets = GetIt.I.get<TweetData>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,18 +23,18 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.blue,
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
-          const Divider(),
-          const SizedBox(height: 300),
-          MyTextField(controller: myController)
+          Divider(),
+          SizedBox(height: 300),
         ],
       ),
       floatingActionButton: Flexible(
         child: FloatingActionButton(
             onPressed: () {
-              print(myController.text);
-              // tweets.addTweet(tweet: myController.text);
+              Navigator.of(context).push((MaterialPageRoute(builder: (context) {
+                return const SecondScreen();
+              })));
             },
             shape: const OvalBorder(),
             backgroundColor: Colors.blue,
