@@ -14,4 +14,9 @@ class TweetModel {
     data['id'] = id;
     return data;
   }
+
+  @override
+  String toString() {
+    return 'TweetModel{tweet: $tweet, id: $id}';
+  }
 }

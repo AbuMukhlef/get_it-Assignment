@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Divider(),
           SizedBox(height: 300),
+          
         ],
       ),
       floatingActionButton: Flexible(

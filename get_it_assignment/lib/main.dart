@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get_it_assignment/screen/home_screen.dart';
 import 'package:get_it_assignment/servers/dependency.dart';
-import 'package:get_storage/get_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  setupData();
-  GetStorage.init();
+  await setup();
   runApp(const MainApp());
 }
 
