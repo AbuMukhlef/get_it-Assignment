@@ -5,18 +5,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get_it_assignment/core/all_file.dart';
 import 'package:get_it_assignment/model/tweet_model.dart';
 
-class SecondScreen extends StatefulWidget {
+class SecondScreen extends StatelessWidget {
   const SecondScreen({super.key});
 
   @override
-  State<SecondScreen> createState() => _SecondScreenState();
-}
-
-class _SecondScreenState extends State<SecondScreen> {
-  final TextEditingController myController = TextEditingController();
-  String name = '';
-  @override
   Widget build(BuildContext context) {
+    final TextEditingController myController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -42,12 +36,9 @@ class _SecondScreenState extends State<SecondScreen> {
                       ),
                     );
                 // locator.get<TweetData>().box.erase();
-                name = locator.get<TweetData>().box.read("tweets").toString();
-                setState(() {});
               },
               child:
                   const Text('Tweet', style: TextStyle(color: Colors.white))),
-          Text(name),
         ],
       ),
     );

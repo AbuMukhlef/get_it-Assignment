@@ -23,12 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.blue,
         ),
       ),
-      body: const Column(
-        children: [
-          Divider(),
-          SizedBox(height: 300),
-          
-        ],
+      body: Column(
+        children:
+            locator.get<TweetData>().tweets.map((e) => Text(e.tweet)).toList(),
       ),
       floatingActionButton: Flexible(
         child: FloatingActionButton(
